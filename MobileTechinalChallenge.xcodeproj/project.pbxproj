@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2000344E20517CCB00794642 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2000344D20517CCB00794642 /* AppDelegate.swift */; };
-		2000345020517CCB00794642 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2000344F20517CCB00794642 /* ViewController.swift */; };
 		2000345320517CCB00794642 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2000345120517CCB00794642 /* Main.storyboard */; };
 		2000345520517CCB00794642 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2000345420517CCB00794642 /* Assets.xcassets */; };
 		2000345820517CCB00794642 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2000345620517CCB00794642 /* LaunchScreen.storyboard */; };
@@ -26,12 +25,13 @@
 		200034892051900400794642 /* AdTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200034882051900400794642 /* AdTableViewController.swift */; };
 		2000348B2051A8BF00794642 /* AdDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2000348A2051A8BF00794642 /* AdDownload.swift */; };
 		2000348D2051B98100794642 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2000348C2051B98100794642 /* UIImageViewExtension.swift */; };
+		2076106A2051EEE6007F84C1 /* codingChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 207610682051EEE6007F84C1 /* codingChallenge.xcdatamodeld */; };
+		2076106C2051F3E5007F84C1 /* FavouriteItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076106B2051F3E5007F84C1 /* FavouriteItems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2000344A20517CCB00794642 /* MobileTechinalChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileTechinalChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2000344D20517CCB00794642 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2000344F20517CCB00794642 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2000345220517CCB00794642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2000345420517CCB00794642 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2000345720517CCB00794642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +50,8 @@
 		200034882051900400794642 /* AdTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewController.swift; sourceTree = "<group>"; };
 		2000348A2051A8BF00794642 /* AdDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDownload.swift; sourceTree = "<group>"; };
 		2000348C2051B98100794642 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		207610692051EEE6007F84C1 /* codingChallenge2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = codingChallenge2.xcdatamodel; sourceTree = "<group>"; };
+		2076106B2051F3E5007F84C1 /* FavouriteItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,11 +84,10 @@
 		2000344C20517CCB00794642 /* MobileTechinalChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				207610682051EEE6007F84C1 /* codingChallenge.xcdatamodeld */,
 				2000348120518E7600794642 /* Cell */,
-				200034702051891600794642 /* json1 */,
-				2000345F20517DB000794642 /* New Group */,
+				200034702051891600794642 /* json */,
 				2000344D20517CCB00794642 /* AppDelegate.swift */,
-				2000344F20517CCB00794642 /* ViewController.swift */,
 				2000345120517CCB00794642 /* Main.storyboard */,
 				2000345420517CCB00794642 /* Assets.xcassets */,
 				2000345620517CCB00794642 /* LaunchScreen.storyboard */,
@@ -95,18 +96,12 @@
 				200034882051900400794642 /* AdTableViewController.swift */,
 				2000348A2051A8BF00794642 /* AdDownload.swift */,
 				2000348C2051B98100794642 /* UIImageViewExtension.swift */,
+				2076106B2051F3E5007F84C1 /* FavouriteItems.swift */,
 			);
 			path = MobileTechinalChallenge;
 			sourceTree = "<group>";
 		};
-		2000345F20517DB000794642 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		200034702051891600794642 /* json1 */ = {
+		200034702051891600794642 /* json */ = {
 			isa = PBXGroup;
 			children = (
 				200034732051891F00794642 /* Actions.swift */,
@@ -118,7 +113,7 @@
 				200034742051891F00794642 /* Price.swift */,
 				200034752051891F00794642 /* Tracking.swift */,
 			);
-			path = json1;
+			path = json;
 			sourceTree = "<group>";
 		};
 		2000348120518E7600794642 /* Cell */ = {
@@ -207,6 +202,7 @@
 				2000347D2051891F00794642 /* Tracking.swift in Sources */,
 				200034792051891F00794642 /* Adobe.swift in Sources */,
 				2000348520518EDB00794642 /* AdSource.swift in Sources */,
+				2076106A2051EEE6007F84C1 /* codingChallenge.xcdatamodeld in Sources */,
 				2000348320518E8A00794642 /* ItemCell.swift in Sources */,
 				2000347C2051891F00794642 /* Price.swift in Sources */,
 				2000347B2051891F00794642 /* Actions.swift in Sources */,
@@ -215,8 +211,8 @@
 				2000348B2051A8BF00794642 /* AdDownload.swift in Sources */,
 				200034802051891F00794642 /* Json4Swift_Base.swift in Sources */,
 				2000347E2051891F00794642 /* Ec.swift in Sources */,
-				2000345020517CCB00794642 /* ViewController.swift in Sources */,
 				2000348D2051B98100794642 /* UIImageViewExtension.swift in Sources */,
+				2076106C2051F3E5007F84C1 /* FavouriteItems.swift in Sources */,
 				2000344E20517CCB00794642 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +398,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		207610682051EEE6007F84C1 /* codingChallenge.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				207610692051EEE6007F84C1 /* codingChallenge2.xcdatamodel */,
+			);
+			currentVersion = 207610692051EEE6007F84C1 /* codingChallenge2.xcdatamodel */;
+			path = codingChallenge.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2000344220517CCB00794642 /* Project object */;
 }

@@ -15,23 +15,19 @@ class AdDownload{
     func getData(completion: @escaping((_ data: Json4Swift_Base) -> Void)){
         
         
-        let request = NSMutableURLRequest(url: MAIN_URL as! URL)
+        let request = NSMutableURLRequest(url: MAIN_URL )
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
             do {
-                
-                
-//                let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary
-                
-                //                print(convertedJsonIntoDict)
+
                 
                 let someDictionaryFromJSON = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String: Any]
                 let json4Swift_Base = Json4Swift_Base(dictionary: someDictionaryFromJSON as NSDictionary)
                 
                 completion( json4Swift_Base!)
                 
-                //                print(responseModel)
+
             } catch let error as NSError {
                 print(error.localizedDescription)
             }

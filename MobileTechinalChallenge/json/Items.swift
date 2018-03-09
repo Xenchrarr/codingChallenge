@@ -9,10 +9,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 
 import Foundation
+import CoreData
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class Items:  Equatable{
+public class Items: Equatable{
     public static func ==(lhs: Items, rhs: Items) -> Bool {
         return lhs.id == rhs.id
     }
