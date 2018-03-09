@@ -12,8 +12,18 @@ import Foundation
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class Price {
+public class Price: NSObject, NSCoding{
+    
 	public var value : Int?
+    
+    
+    public func encode(with aCoder: NSCoder) {
+        aCoder.encode(value, forKey: "value")
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        self.value = aDecoder.decodeObject(forKey: "value") as? Int
+    }
 
 /**
     Returns an array of models based on given dictionary.

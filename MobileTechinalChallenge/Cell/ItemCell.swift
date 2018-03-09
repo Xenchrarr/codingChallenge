@@ -39,19 +39,15 @@ final class ItemCell: UITableViewCell {
             price.text = String(describing: item.price?.value ?? 0) + ", -"
         }
         
-        title.text = item.description
-        
-        if !item.isFavourite {
+        title.text = item.description1
+
+        if item.isFavourite {
+            photo.image = item.downloadedImage
+            likePhoto.setImage(UIImage(named: "heart.png"), for: .normal)
+        } else {
             photo.image = nil
             let url = URL(string: imageBaseUrl + (item.image?.url)!)
             photo.downloadedFrom(url: url!)
-        } else {
-            photo.image = item.downloadedImage
-        }
-
-        if item.isFavourite {
-            likePhoto.setImage(UIImage(named: "heart.png"), for: .normal)
-        } else {
             likePhoto.setImage(UIImage(named: "heart1.png"), for: .normal)
         }
         

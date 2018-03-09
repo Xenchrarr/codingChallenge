@@ -14,6 +14,11 @@ class FavouriteItems{
     var items: [Items] = []
     var itemKeys: [String] = []
     
+    
+    init(){
+        self.loadFavourites()
+    }
+    
     func add(item: Items, image: UIImage){
         if isPresent(item: item) == nil{
             item.downloadedImage = image
@@ -56,6 +61,28 @@ class FavouriteItems{
         }
         
         return nil 
+    }
+    
+    
+    func loadFavourites(){
+        guard let favouritesData = UserDefaults.standard.object(forKey: "favourites") as? NSData else {
+            return
+        }
+        
+        guard let favouritesArray = NSKeyedUnarchiver.unarchiveObject(with: favouritesData as Data) as? [Items] else {
+            return
+        }
+        
+        for item in favouritesArray {
+            items.append(item)
+            itemKeys.append(item.id!)
+        }
+    }
+    
+    
+    func saveFavourites(){
+        let favouritesData = NSKeyedArchiver.archivedData(withRootObject: items)
+        UserDefaults.standard.set(favouritesData, forKey: "favourites")
     }
     
 }

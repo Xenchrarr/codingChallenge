@@ -17,6 +17,7 @@ final class AdSource: NSObject, UITableViewDataSource, ItemCellDelegate {
     private var items: [Items] = []
     private var favourites = FavouriteItems()
     private var downloadedItems: [Items] = []
+
     
     
     func setFavorite(_ tag: Int, image: UIImage) {
@@ -28,6 +29,8 @@ final class AdSource: NSObject, UITableViewDataSource, ItemCellDelegate {
         } else {
             favourites.remove(item: items[tag])
         }
+        
+        favourites.saveFavourites()
     }
     
     func setDownloaded(){
@@ -57,6 +60,7 @@ final class AdSource: NSObject, UITableViewDataSource, ItemCellDelegate {
         }
     }
     
+
     func setFavourites(){
         self.items = favourites.items
         maximumNumberOfItems = self.items.count
@@ -84,17 +88,12 @@ final class AdSource: NSObject, UITableViewDataSource, ItemCellDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: ItemCell.reuseIdentifier, for: indexPath) as! ItemCell
-            cell.configure(with: items[indexPath.row])
-            cell.cellDelegate = self as ItemCellDelegate
-            cell.tag = indexPath.row
-            return cell
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: MoreCell.reuseIdentifier, for: indexPath) as! MoreCell
-            return cell
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: ItemCell.reuseIdentifier, for: indexPath) as! ItemCell
+        cell.configure(with: items[indexPath.row])
+        cell.cellDelegate = self as ItemCellDelegate
+        cell.tag = indexPath.row
+        return cell
+
     }
     
     
@@ -107,7 +106,6 @@ final class AdSource: NSObject, UITableViewDataSource, ItemCellDelegate {
         if downloadedItems.count > 0 {
             return true
         }
-        
         return false
     }
     

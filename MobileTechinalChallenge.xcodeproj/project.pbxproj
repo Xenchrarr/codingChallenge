@@ -21,11 +21,10 @@
 		200034802051891F00794642 /* Json4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200034782051891F00794642 /* Json4Swift_Base.swift */; };
 		2000348320518E8A00794642 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2000348220518E8A00794642 /* ItemCell.swift */; };
 		2000348520518EDB00794642 /* AdSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2000348420518EDB00794642 /* AdSource.swift */; };
-		2000348720518F5900794642 /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2000348620518F5900794642 /* MoreCell.swift */; };
 		200034892051900400794642 /* AdTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200034882051900400794642 /* AdTableViewController.swift */; };
 		2000348B2051A8BF00794642 /* AdDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2000348A2051A8BF00794642 /* AdDownload.swift */; };
 		2000348D2051B98100794642 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2000348C2051B98100794642 /* UIImageViewExtension.swift */; };
-		2076106A2051EEE6007F84C1 /* codingChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 207610682051EEE6007F84C1 /* codingChallenge.xcdatamodeld */; };
+		2000348F20529AFF00794642 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2000348E20529AFF00794642 /* UIViewControllerExtension.swift */; };
 		2076106C2051F3E5007F84C1 /* FavouriteItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076106B2051F3E5007F84C1 /* FavouriteItems.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,11 +45,11 @@
 		200034782051891F00794642 /* Json4Swift_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
 		2000348220518E8A00794642 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		2000348420518EDB00794642 /* AdSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdSource.swift; sourceTree = "<group>"; };
-		2000348620518F5900794642 /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
 		200034882051900400794642 /* AdTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewController.swift; sourceTree = "<group>"; };
 		2000348A2051A8BF00794642 /* AdDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDownload.swift; sourceTree = "<group>"; };
 		2000348C2051B98100794642 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
-		207610692051EEE6007F84C1 /* codingChallenge2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = codingChallenge2.xcdatamodel; sourceTree = "<group>"; };
+		2000348E20529AFF00794642 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		200034912052AE0600794642 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2076106B2051F3E5007F84C1 /* FavouriteItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,7 +83,7 @@
 		2000344C20517CCB00794642 /* MobileTechinalChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				207610682051EEE6007F84C1 /* codingChallenge.xcdatamodeld */,
+				2000349020529D7C00794642 /* Extensions */,
 				2000348120518E7600794642 /* Cell */,
 				200034702051891600794642 /* json */,
 				2000344D20517CCB00794642 /* AppDelegate.swift */,
@@ -95,8 +94,8 @@
 				2000348420518EDB00794642 /* AdSource.swift */,
 				200034882051900400794642 /* AdTableViewController.swift */,
 				2000348A2051A8BF00794642 /* AdDownload.swift */,
-				2000348C2051B98100794642 /* UIImageViewExtension.swift */,
 				2076106B2051F3E5007F84C1 /* FavouriteItems.swift */,
+				200034912052AE0600794642 /* README.md */,
 			);
 			path = MobileTechinalChallenge;
 			sourceTree = "<group>";
@@ -120,9 +119,17 @@
 			isa = PBXGroup;
 			children = (
 				2000348220518E8A00794642 /* ItemCell.swift */,
-				2000348620518F5900794642 /* MoreCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2000349020529D7C00794642 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2000348C2051B98100794642 /* UIImageViewExtension.swift */,
+				2000348E20529AFF00794642 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,14 +206,13 @@
 			files = (
 				200034892051900400794642 /* AdTableViewController.swift in Sources */,
 				2000347F2051891F00794642 /* Items.swift in Sources */,
+				2000348F20529AFF00794642 /* UIViewControllerExtension.swift in Sources */,
 				2000347D2051891F00794642 /* Tracking.swift in Sources */,
 				200034792051891F00794642 /* Adobe.swift in Sources */,
 				2000348520518EDB00794642 /* AdSource.swift in Sources */,
-				2076106A2051EEE6007F84C1 /* codingChallenge.xcdatamodeld in Sources */,
 				2000348320518E8A00794642 /* ItemCell.swift in Sources */,
 				2000347C2051891F00794642 /* Price.swift in Sources */,
 				2000347B2051891F00794642 /* Actions.swift in Sources */,
-				2000348720518F5900794642 /* MoreCell.swift in Sources */,
 				2000347A2051891F00794642 /* Image.swift in Sources */,
 				2000348B2051A8BF00794642 /* AdDownload.swift in Sources */,
 				200034802051891F00794642 /* Json4Swift_Base.swift in Sources */,
@@ -398,19 +404,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		207610682051EEE6007F84C1 /* codingChallenge.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				207610692051EEE6007F84C1 /* codingChallenge2.xcdatamodel */,
-			);
-			currentVersion = 207610692051EEE6007F84C1 /* codingChallenge2.xcdatamodel */;
-			path = codingChallenge.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 2000344220517CCB00794642 /* Project object */;
 }

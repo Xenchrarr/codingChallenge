@@ -14,8 +14,8 @@ class AdTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        downloadData()
         favouriteSwitch.isOn = false
+        downloadData()
     }
     
     private var tableDataSource = AdSource()
@@ -23,22 +23,31 @@ class AdTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.dataSource = tableDataSource
-        tableView.estimatedRowHeight = 150.0
-        //        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.rowHeight = 160.0
+        tableView.estimatedRowHeight = 170.0
+        tableView.rowHeight = 170.0
         
         
     }
     
     func downloadData(){
+        let sv = UIViewController.displaySpinner(onView: self.view)
         let adDownload = AdDownload()
-        
-        adDownload.getData(completion: { data in
-            self.tableDataSource.updateItems(data: data)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        })
+        if adDownload.connectedToNetwork() {
+            adDownload.getData(completion: { data in
+                self.tableDataSource.updateItems(data: data)
+                DispatchQueue.main.async {
+                    UIViewController.removeSpinner(spinner: sv)
+                    self.tableView.reloadData()
+                }
+            })
+        } else {
+            UIViewController.removeSpinner(spinner: sv)
+            self.showToast(message: "No network connection")
+            favouriteSwitch.isOn = true
+            tableDataSource.setFavourites()
+            tableView.reloadData()
+        }
+       
     }
     
     @IBAction func favouriteSwitch(_ sender: Any) {
@@ -59,17 +68,12 @@ class AdTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard indexPath.section == 0 else { return }
-        let lastElement = tableDataSource.getNumberOfItems() - 2
+        let lastElement = tableDataSource.getNumberOfItems() - 1
         if indexPath.row == lastElement {
             DispatchQueue.main.async() {
-                
-                
                 let numberOfItems = self.tableDataSource.tableView(tableView, numberOfRowsInSection: 0)
                 self.tableDataSource.getMoreItems()
-                
                 let newNumberOfItems = self.tableDataSource.tableView(tableView, numberOfRowsInSection: 0)
-
-                
                 let newIndexPaths = Array(numberOfItems ..< newNumberOfItems).map { (n) -> IndexPath in
                     IndexPath(row: n, section: 0)
                 }
@@ -84,12 +88,6 @@ class AdTableViewController: UITableViewController {
                 }
             }
         }
-    }
-    
-    
-    
-    func updateTableView(){
-        
     }
     
 }

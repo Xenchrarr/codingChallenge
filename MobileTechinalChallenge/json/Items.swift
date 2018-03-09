@@ -14,16 +14,35 @@ import UIKit
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class Items: Equatable{
+public class Items: NSObject, NSCoding{
+    
+    public func encode(with aCoder: NSCoder) {
+        aCoder.encode(downloadedImage, forKey: "image")
+        aCoder.encode(price, forKey: "price")
+        aCoder.encode(description1, forKey: "description")
+        aCoder.encode(location, forKey: "location")
+        aCoder.encode(id, forKey: "id")
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        self.downloadedImage = (aDecoder.decodeObject(forKey: "image") as! UIImage)
+        self.price = aDecoder.decodeObject(forKey: "price") as? Price
+        self.description1 = aDecoder.decodeObject(forKey: "description") as? String ?? ""
+        self.location = aDecoder.decodeObject(forKey: "location") as? String ?? ""
+        self.id = (aDecoder.decodeObject(forKey: "id") as! String)
+        self.isFavourite = true
+    }
+    
     public static func ==(lhs: Items, rhs: Items) -> Bool {
         return lhs.id == rhs.id
     }
+
     
 	public var image : Image?
 	public var score : Double?
 	public var adType : String?
 	public var price : Price?
-	public var description : String?
+	public var description1 : String?
 	public var location : String?
 	public var id : String?
 	public var type : String?
@@ -69,7 +88,7 @@ public class Items: Equatable{
 		score = dictionary["score"] as? Double
 		adType = dictionary["ad-type"] as? String
 		if (dictionary["price"] != nil) { price = Price(dictionary: dictionary["price"] as! NSDictionary) }
-		description = dictionary["description"] as? String
+		description1 = dictionary["description"] as? String
 		location = dictionary["location"] as? String
 		id = dictionary["id"] as? String
 		type = dictionary["type"] as? String
@@ -92,7 +111,7 @@ public class Items: Equatable{
 		dictionary.setValue(self.score, forKey: "score")
 		dictionary.setValue(self.adType, forKey: "ad-type")
 		dictionary.setValue(self.price?.dictionaryRepresentation(), forKey: "price")
-		dictionary.setValue(self.description, forKey: "description")
+		dictionary.setValue(self.description1, forKey: "description")
 		dictionary.setValue(self.location, forKey: "location")
 		dictionary.setValue(self.id, forKey: "id")
 		dictionary.setValue(self.type, forKey: "type")
