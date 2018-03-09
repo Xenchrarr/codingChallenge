@@ -10,6 +10,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 import Foundation
 import CoreData
+import UIKit
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
@@ -24,11 +25,13 @@ public class Items: Equatable{
 	public var price : Price?
 	public var description : String?
 	public var location : String?
-	public var id : Int?
+	public var id : String?
 	public var type : String?
 	public var tracking : Tracking?
 	public var actions : Actions?
 	public var version : String?
+    public var isFavourite: Bool = false
+    public var downloadedImage: UIImage?
 
 /**
     Returns an array of models based on given dictionary.
@@ -68,7 +71,7 @@ public class Items: Equatable{
 		if (dictionary["price"] != nil) { price = Price(dictionary: dictionary["price"] as! NSDictionary) }
 		description = dictionary["description"] as? String
 		location = dictionary["location"] as? String
-		id = dictionary["id"] as? Int
+		id = dictionary["id"] as? String
 		type = dictionary["type"] as? String
 		if (dictionary["tracking"] != nil) { tracking = Tracking(dictionary: dictionary["tracking"] as! NSDictionary) }
 		if (dictionary["actions"] != nil) { actions = Actions(dictionary: dictionary["actions"] as! NSDictionary) }
