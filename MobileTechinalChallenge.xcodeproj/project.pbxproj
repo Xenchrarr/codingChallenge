@@ -67,6 +67,7 @@
 		2000344120517CCB00794642 = {
 			isa = PBXGroup;
 			children = (
+				200034912052AE0600794642 /* README.md */,
 				2000344C20517CCB00794642 /* MobileTechinalChallenge */,
 				2000344B20517CCB00794642 /* Products */,
 			);
@@ -95,7 +96,6 @@
 				200034882051900400794642 /* AdTableViewController.swift */,
 				2000348A2051A8BF00794642 /* AdDownload.swift */,
 				2076106B2051F3E5007F84C1 /* FavouriteItems.swift */,
-				200034912052AE0600794642 /* README.md */,
 			);
 			path = MobileTechinalChallenge;
 			sourceTree = "<group>";
