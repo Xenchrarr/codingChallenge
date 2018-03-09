@@ -35,15 +35,13 @@ When the cells are created now, it will check if the item is a part of the favou
 
 isFavourite variable was added to item to make it easier to check if it a favourite.
 
+I keep the downloaded and favourited ads separat. So when the switch is clicked, it swaps out the data set.
+
 
 5. - persistency
 I went with NSCoder since it seemed the easiest to implement. I added the required methods to FavouriteItems, price and Items to save and load the minimum required data.
 
 Now, before the network connection starts, it will load the favourites, so they are available when inserting the data from the JSON. This way the hearts will be red for the favourites that are saved.
-
-
-
-
 
 
 I wanted the scrolling to be as fluent as possible, and I am happy with the result.
@@ -52,3 +50,5 @@ I wanted the scrolling to be as fluent as possible, and I am happy with the resu
 The favouriting seems a bit hacky, I am do either a or b all over the place. I am also unsure on wheter is a good idea to download images on cellForRowAt. I wonder if this can lead to strange behaviour on slow networks. If scrolled fast I am thinking that an old image is loaded in the wrong cell before the correct one is loaded.
 
 I did not spend much time on the GUI. I am not very good at it nor did I have time to research much. I went with tableview - but a collectionview would probably have been better?
+
+The favourited ads are not removed from the view when clicking on the heart before loading all (clicking the switch), but they are removed from the favourites.
